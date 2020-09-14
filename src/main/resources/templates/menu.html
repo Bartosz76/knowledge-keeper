@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="menu.css">
 </head>
 <style>
     body {
@@ -12,13 +13,17 @@
 <body>
     <div id="header">Choose an option:</div>
 
-        <form action="addARecord" method="post">
-            <input type="submit" value="Add a link">
-        </form>
+        <div class="subheader1">
+            <form action="addARecord" method="post">
+                <input type="submit" value="Add a link">
+            </form>
+        </div>
 
-        <form action="displayAllRecords" method="post">
-            <input type="submit" value="Show all links">
-        </form>
+        <div class="subheader2">
+            <form action="displayAllRecords" method="post">
+                <input type="submit" value="Show all links">
+            </form>
+    </div>
 
 </body>
 </html>
