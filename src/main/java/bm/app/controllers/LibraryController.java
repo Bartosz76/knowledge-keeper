@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.sql.Date;
 import java.time.LocalDate;
-import java.util.Optional;
 
 @Controller
 public class LibraryController {
@@ -27,6 +26,11 @@ public class LibraryController {
     }
 
     @PostMapping("addARecord")
+    public String addingARecord() {
+        return "addARecord";
+    }
+
+    @PostMapping("addedARecord")
     public String addARecordToADatabase(@RequestParam String linkName,
                                         @RequestParam String linkDescription,
                                         Model model) {
