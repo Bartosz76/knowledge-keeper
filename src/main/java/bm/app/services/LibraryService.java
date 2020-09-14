@@ -1,6 +1,7 @@
 package bm.app.services;
 
 import bm.app.models.LinkToCheck;
+import org.springframework.stereotype.Service;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -9,13 +10,15 @@ import java.sql.SQLException;
 
 import static bm.app.config.Constants.*;
 
+@Service
 public class LibraryService {
 
-    private void insertRecord(LinkToCheck linkToCheck) {
-        String sql = "insert into forfutureuse (link_name, added_on) values (?, ?)";
+    public void insertRecord(LinkToCheck linkToCheck) {
+        String sql = "insert into forfutureuse (link_name, description, added_on) values (?, ?, ?)";
         try (final PreparedStatement preparedStatement = getConnection().prepareStatement(sql)) {
             preparedStatement.setString(1, linkToCheck.getLink_name());
-            preparedStatement.setDate(2, linkToCheck.getAdded_on());
+            preparedStatement.setString(2, linkToCheck.getDescription());
+            preparedStatement.setDate(3, linkToCheck.getAdded_on());
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

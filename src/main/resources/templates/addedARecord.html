@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    body {
+        background-color: lightpink;
+    }
+</style>
+<body>
+    <div id="header">A new record has been added.</div>
+        <div th:text="'Link: ' + ${linkName}"/>
+        <div th:text="'Description: ' + ${linkDescription}"/>
+        <div th:text="'Added on: ' + ${addedOn}"/>
+</body>
+</html>

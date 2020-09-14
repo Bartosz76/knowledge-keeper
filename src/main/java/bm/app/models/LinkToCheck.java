@@ -15,5 +15,6 @@ public class LinkToCheck {
 
     private int link_id;
     private String link_name;
+    private String description;
     private Date added_on;
 }
